@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+    <EntitySetMapping Name="Alunoes">
+      <EntityTypeMapping TypeName="DatabaseModel.Aluno">
+        <MappingFragment StoreEntitySet="Aluno">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Aluno_Disciplina">
+      <EntityTypeMapping TypeName="DatabaseModel.Aluno_Disciplina">
+        <MappingFragment StoreEntitySet="Aluno_Disciplina">
+          <ScalarProperty Name="trabalho" ColumnName="trabalho" />
+          <ScalarProperty Name="prova2" ColumnName="prova2" />
+          <ScalarProperty Name="prova1" ColumnName="prova1" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nota" ColumnName="nota" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disciplinas">
+      <EntityTypeMapping TypeName="DatabaseModel.Disciplina">
+        <MappingFragment StoreEntitySet="Disciplina">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuarios">
+      <EntityTypeMapping TypeName="DatabaseModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Aluno_Disciplina_Aluno" TypeName="DatabaseModel.FK_Aluno_Disciplina_Aluno" StoreEntitySet="Aluno_Disciplina">
+      <EndProperty Name="Aluno">
+        <ScalarProperty Name="id" ColumnName="id_aluno" />
+      </EndProperty>
+      <EndProperty Name="Aluno_Disciplina">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Aluno_Disciplina_Disciplina" TypeName="DatabaseModel.FK_Aluno_Disciplina_Disciplina" StoreEntitySet="Aluno_Disciplina">
+      <EndProperty Name="Disciplina">
+        <ScalarProperty Name="id" ColumnName="id_disciplina" />
+      </EndProperty>
+      <EndProperty Name="Aluno_Disciplina">
+        <ScalarProperty Name="id" ColumnName="id" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="3c45e24de43e40a7bc52d4577f2502b3" Name="Diagram1">
+        <EntityTypeShape EntityType="DatabaseModel.Aluno" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Aluno_Disciplina" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Disciplina" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DatabaseModel.Usuario" Width="1.5" PointX="5.125" PointY="2.875" IsExpanded="true" />
+        <AssociationConnector Association="DatabaseModel.FK_Aluno_Disciplina_Aluno" ManuallyRouted="false" />
+        <AssociationConnector Association="DatabaseModel.FK_Aluno_Disciplina_Disciplina" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

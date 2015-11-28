@@ -1,0 +1,79 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Principal.master.cs" Inherits="GerenciaProjeto.Principal" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+
+    <style>
+        #rodape {
+            margin-left:500px;
+            margin-top:100px;
+        }
+
+        #divTabelaDisciplina {
+             margin-top:30px;
+             margin-bottom:30px;
+        }
+    </style>
+    <link href="Content/css/bootstrap.css" rel="stylesheet" media="screen" type="text/css" />
+
+    <script type="text/javascript" src="Content/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="Content/js/bootstrap.js"></script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+        <%-- MENU --%>
+        <div class="col-md-12">
+            <nav class="navbar navbar-default">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="Principal.aspx">Principal</a>
+                    </div>
+                    <div>
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Cadastrar<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="CadAluno.aspx">Aluno</a></li>
+                                    <li><a href="CadDisciplina.aspx">Disciplina</a></li>
+                                    <li><a href="CadMatricula.aspx">Matrícula</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" >Consultar<span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="ConAluno.aspx">Aluno</a></li>
+                                    <li><a href="ConDisciplina.aspx">Disciplina</a></li>
+                                    <li><a href="ConMatricula.aspx">Matrícula</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
+                                <a href="Login.aspx">
+                                    <span class="glyphicon glyphicon-log-out"></span> Sair
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <%-- CONTEÚDO --%>
+        <div class="col-md-12">
+            <asp:ContentPlaceHolder id="conteudo" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+
+        <%-- RODAPÉ --%>
+        <div ID="rodape" class="col-md-12">
+            TODOS OS DIREITOS RESERVADOS TADS - 2015
+        </div>
+</body>
+</html>

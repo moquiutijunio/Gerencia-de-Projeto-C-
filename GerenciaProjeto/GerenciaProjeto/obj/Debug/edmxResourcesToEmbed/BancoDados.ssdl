@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="DatabaseModelStoreContainer">
+    <EntitySet Name="Aluno" EntityType="DatabaseModel.Store.Aluno" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Aluno_Disciplina" EntityType="DatabaseModel.Store.Aluno_Disciplina" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Disciplina" EntityType="DatabaseModel.Store.Disciplina" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="DatabaseModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Aluno_Disciplina_Aluno" Association="DatabaseModel.Store.FK_Aluno_Disciplina_Aluno">
+      <End Role="Aluno" EntitySet="Aluno" />
+      <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aluno_Disciplina_Disciplina" Association="DatabaseModel.Store.FK_Aluno_Disciplina_Disciplina">
+      <End Role="Disciplina" EntitySet="Disciplina" />
+      <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="cidade" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="estado" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="sexo" Type="char" Nullable="false" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Aluno_Disciplina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="id_aluno" Type="int" Nullable="false" />
+    <Property Name="id_disciplina" Type="int" Nullable="false" />
+    <Property Name="nota" Type="float" Nullable="false" />
+    <Property Name="prova1" Type="float" Nullable="false" />
+    <Property Name="prova2" Type="float" Nullable="false" />
+    <Property Name="trabalho" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="descricao" Type="nchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="nchar" Nullable="false" MaxLength="50" />
+    <Property Name="senha" Type="nchar" Nullable="false" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK_Aluno_Disciplina_Aluno">
+    <End Role="Aluno" Type="DatabaseModel.Store.Aluno" Multiplicity="1" />
+    <End Role="Aluno_Disciplina" Type="DatabaseModel.Store.Aluno_Disciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Aluno">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aluno_Disciplina">
+        <PropertyRef Name="id_aluno" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Aluno_Disciplina_Disciplina">
+    <End Role="Disciplina" Type="DatabaseModel.Store.Disciplina" Multiplicity="1" />
+    <End Role="Aluno_Disciplina" Type="DatabaseModel.Store.Aluno_Disciplina" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Disciplina">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Aluno_Disciplina">
+        <PropertyRef Name="id_disciplina" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

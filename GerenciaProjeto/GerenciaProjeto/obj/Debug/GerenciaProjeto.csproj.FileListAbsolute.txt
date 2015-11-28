@@ -1,0 +1,30 @@
+c:\users\andré\documents\visual studio 2012\Projects\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.dll
+c:\users\andré\documents\visual studio 2012\Projects\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.pdb
+c:\users\andré\documents\visual studio 2012\Projects\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.csprojResolveAssemblyReference.cache
+c:\users\andré\documents\visual studio 2012\Projects\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.dll
+c:\users\andré\documents\visual studio 2012\Projects\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.pdb
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.dll
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.pdb
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.csprojResolveAssemblyReference.cache
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.dll
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.pdb
+C:\Users\KOL\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.dll
+C:\Users\KOL\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.pdb
+C:\Users\KOL\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.csprojResolveAssemblyReference.cache
+C:\Users\KOL\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.dll
+C:\Users\KOL\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.pdb
+C:\Users\Junio\Google Drive\UCDB\6 Semestre\TOPICOS AVANÇADOS EM TI\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.dll
+C:\Users\Junio\Google Drive\UCDB\6 Semestre\TOPICOS AVANÇADOS EM TI\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.pdb
+C:\Users\Junio\Google Drive\UCDB\6 Semestre\TOPICOS AVANÇADOS EM TI\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.csprojResolveAssemblyReference.cache
+C:\Users\Junio\Google Drive\UCDB\6 Semestre\TOPICOS AVANÇADOS EM TI\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.dll
+C:\Users\Junio\Google Drive\UCDB\6 Semestre\TOPICOS AVANÇADOS EM TI\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.pdb
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.dll
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.pdb
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.csprojResolveAssemblyReference.cache
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.dll
+C:\Users\Evandro\Documents\UCDB\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.pdb
+D:\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.dll
+D:\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\bin\GerenciaProjeto.pdb
+D:\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.csprojResolveAssemblyReference.cache
+D:\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.dll
+D:\Desktop\GerenciaProjeto\GerenciaProjeto\GerenciaProjeto\obj\Debug\GerenciaProjeto.pdb

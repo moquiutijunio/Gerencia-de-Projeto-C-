@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="Aluno" EntityType="DatabaseModel.Store.Aluno" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Aluno_Disciplina" EntityType="DatabaseModel.Store.Aluno_Disciplina" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Disciplina" EntityType="DatabaseModel.Store.Disciplina" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="DatabaseModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Aluno_Disciplina_Aluno" Association="DatabaseModel.Store.FK_Aluno_Disciplina_Aluno">
+            <End Role="Aluno" EntitySet="Aluno" />
+            <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aluno_Disciplina_Disciplina" Association="DatabaseModel.Store.FK_Aluno_Disciplina_Disciplina">
+            <End Role="Disciplina" EntitySet="Disciplina" />
+            <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Aluno">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="cidade" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="estado" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="sexo" Type="char" Nullable="false" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="Aluno_Disciplina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="id_aluno" Type="int" Nullable="false" />
+          <Property Name="id_disciplina" Type="int" Nullable="false" />
+          <Property Name="nota" Type="float" Nullable="false" />
+          <Property Name="prova1" Type="float" Nullable="false" />
+          <Property Name="prova2" Type="float" Nullable="false" />
+          <Property Name="trabalho" Type="float" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Disciplina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="descricao" Type="nchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="nchar" Nullable="false" MaxLength="50" />
+          <Property Name="senha" Type="nchar" Nullable="false" MaxLength="20" />
+        </EntityType>
+        <Association Name="FK_Aluno_Disciplina_Aluno">
+          <End Role="Aluno" Type="DatabaseModel.Store.Aluno" Multiplicity="1" />
+          <End Role="Aluno_Disciplina" Type="DatabaseModel.Store.Aluno_Disciplina" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Aluno">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Aluno_Disciplina">
+              <PropertyRef Name="id_aluno" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Aluno_Disciplina_Disciplina">
+          <End Role="Disciplina" Type="DatabaseModel.Store.Disciplina" Multiplicity="1" />
+          <End Role="Aluno_Disciplina" Type="DatabaseModel.Store.Aluno_Disciplina" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Disciplina">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="Aluno_Disciplina">
+              <PropertyRef Name="id_disciplina" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="DatabaseEntities">
+          <EntitySet Name="Alunoes" EntityType="DatabaseModel.Aluno" />
+          <EntitySet Name="Aluno_Disciplina" EntityType="DatabaseModel.Aluno_Disciplina" />
+          <EntitySet Name="Disciplinas" EntityType="DatabaseModel.Disciplina" />
+          <EntitySet Name="Usuarios" EntityType="DatabaseModel.Usuario" />
+          <AssociationSet Name="FK_Aluno_Disciplina_Aluno" Association="DatabaseModel.FK_Aluno_Disciplina_Aluno">
+            <End Role="Aluno" EntitySet="Alunoes" />
+            <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Aluno_Disciplina_Disciplina" Association="DatabaseModel.FK_Aluno_Disciplina_Disciplina">
+            <End Role="Disciplina" EntitySet="Disciplinas" />
+            <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Aluno">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="cidade" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+          <NavigationProperty Name="Aluno_Disciplina" Relationship="DatabaseModel.FK_Aluno_Disciplina_Aluno" FromRole="Aluno" ToRole="Aluno_Disciplina" />
+        </EntityType>
+        <EntityType Name="Aluno_Disciplina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nota" Type="Double" Nullable="false" />
+          <NavigationProperty Name="Aluno" Relationship="DatabaseModel.FK_Aluno_Disciplina_Aluno" FromRole="Aluno_Disciplina" ToRole="Aluno" />
+          <NavigationProperty Name="Disciplina" Relationship="DatabaseModel.FK_Aluno_Disciplina_Disciplina" FromRole="Aluno_Disciplina" ToRole="Disciplina" />
+          <Property Type="Double" Name="prova1" Nullable="false" />
+          <Property Type="Double" Name="prova2" Nullable="false" />
+          <Property Type="Double" Name="trabalho" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Disciplina">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="descricao" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <NavigationProperty Name="Aluno_Disciplina" Relationship="DatabaseModel.FK_Aluno_Disciplina_Disciplina" FromRole="Disciplina" ToRole="Aluno_Disciplina" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+          <Property Name="senha" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+        </EntityType>
+        <Association Name="FK_Aluno_Disciplina_Aluno">
+          <End Role="Aluno" Type="DatabaseModel.Aluno" Multiplicity="1" />
+          <End Role="Aluno_Disciplina" Type="DatabaseModel.Aluno_Disciplina" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Aluno_Disciplina_Disciplina">
+          <End Role="Disciplina" Type="DatabaseModel.Disciplina" Multiplicity="1" />
+          <End Role="Aluno_Disciplina" Type="DatabaseModel.Aluno_Disciplina" Multiplicity="*" />
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="DatabaseEntities">
+          <EntitySetMapping Name="Alunoes">
+            <EntityTypeMapping TypeName="DatabaseModel.Aluno">
+              <MappingFragment StoreEntitySet="Aluno">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="cidade" ColumnName="cidade" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="sexo" ColumnName="sexo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Aluno_Disciplina">
+            <EntityTypeMapping TypeName="DatabaseModel.Aluno_Disciplina">
+              <MappingFragment StoreEntitySet="Aluno_Disciplina">
+                <ScalarProperty Name="trabalho" ColumnName="trabalho" />
+                <ScalarProperty Name="prova2" ColumnName="prova2" />
+                <ScalarProperty Name="prova1" ColumnName="prova1" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nota" ColumnName="nota" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Disciplinas">
+            <EntityTypeMapping TypeName="DatabaseModel.Disciplina">
+              <MappingFragment StoreEntitySet="Disciplina">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nome" ColumnName="nome" />
+                <ScalarProperty Name="descricao" ColumnName="descricao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="DatabaseModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="login" ColumnName="login" />
+                <ScalarProperty Name="senha" ColumnName="senha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Aluno_Disciplina_Aluno" TypeName="DatabaseModel.FK_Aluno_Disciplina_Aluno" StoreEntitySet="Aluno_Disciplina">
+            <EndProperty Name="Aluno">
+              <ScalarProperty Name="id" ColumnName="id_aluno" />
+            </EndProperty>
+            <EndProperty Name="Aluno_Disciplina">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Aluno_Disciplina_Disciplina" TypeName="DatabaseModel.FK_Aluno_Disciplina_Disciplina" StoreEntitySet="Aluno_Disciplina">
+            <EndProperty Name="Disciplina">
+              <ScalarProperty Name="id" ColumnName="id_disciplina" />
+            </EndProperty>
+            <EndProperty Name="Aluno_Disciplina">
+              <ScalarProperty Name="id" ColumnName="id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

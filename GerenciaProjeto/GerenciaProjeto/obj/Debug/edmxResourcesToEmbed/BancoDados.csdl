@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="DatabaseEntities">
+    <EntitySet Name="Alunoes" EntityType="DatabaseModel.Aluno" />
+    <EntitySet Name="Aluno_Disciplina" EntityType="DatabaseModel.Aluno_Disciplina" />
+    <EntitySet Name="Disciplinas" EntityType="DatabaseModel.Disciplina" />
+    <EntitySet Name="Usuarios" EntityType="DatabaseModel.Usuario" />
+    <AssociationSet Name="FK_Aluno_Disciplina_Aluno" Association="DatabaseModel.FK_Aluno_Disciplina_Aluno">
+      <End Role="Aluno" EntitySet="Alunoes" />
+      <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Aluno_Disciplina_Disciplina" Association="DatabaseModel.FK_Aluno_Disciplina_Disciplina">
+      <End Role="Disciplina" EntitySet="Disciplinas" />
+      <End Role="Aluno_Disciplina" EntitySet="Aluno_Disciplina" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Aluno">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="cidade" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="estado" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="sexo" Type="String" Nullable="false" MaxLength="1" Unicode="false" FixedLength="true" />
+    <NavigationProperty Name="Aluno_Disciplina" Relationship="DatabaseModel.FK_Aluno_Disciplina_Aluno" FromRole="Aluno" ToRole="Aluno_Disciplina" />
+  </EntityType>
+  <EntityType Name="Aluno_Disciplina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nota" Type="Double" Nullable="false" />
+    <NavigationProperty Name="Aluno" Relationship="DatabaseModel.FK_Aluno_Disciplina_Aluno" FromRole="Aluno_Disciplina" ToRole="Aluno" />
+    <NavigationProperty Name="Disciplina" Relationship="DatabaseModel.FK_Aluno_Disciplina_Disciplina" FromRole="Aluno_Disciplina" ToRole="Disciplina" />
+    <Property Type="Double" Name="prova1" Nullable="false" />
+    <Property Type="Double" Name="prova2" Nullable="false" />
+    <Property Type="Double" Name="trabalho" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Disciplina">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="descricao" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <NavigationProperty Name="Aluno_Disciplina" Relationship="DatabaseModel.FK_Aluno_Disciplina_Disciplina" FromRole="Disciplina" ToRole="Aluno_Disciplina" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="true" />
+    <Property Name="senha" Type="String" Nullable="false" MaxLength="20" Unicode="true" FixedLength="true" />
+  </EntityType>
+  <Association Name="FK_Aluno_Disciplina_Aluno">
+    <End Role="Aluno" Type="DatabaseModel.Aluno" Multiplicity="1" />
+    <End Role="Aluno_Disciplina" Type="DatabaseModel.Aluno_Disciplina" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Aluno_Disciplina_Disciplina">
+    <End Role="Disciplina" Type="DatabaseModel.Disciplina" Multiplicity="1" />
+    <End Role="Aluno_Disciplina" Type="DatabaseModel.Aluno_Disciplina" Multiplicity="*" />
+  </Association>
+</Schema>
